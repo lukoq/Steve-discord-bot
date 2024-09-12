@@ -81,12 +81,12 @@ async def question(ctx, *, query):
     await ctx.send(response)
 
 
-@bot.command(name='ping', help="Check if the bot is online.")
+@bot.command(name='ping', help="Check if the bot is online")
 async def ping(ctx):
     await ctx.send('Pong!')
 
 
-@bot.command(name='say', help='Make the bot say something.')
+@bot.command(name='say', help='Make the bot say something')
 async def say(ctx, *, message):
     await ctx.send(message)
 
@@ -124,7 +124,7 @@ async def play(ctx, url):
         await ctx.send(f'Error: {str(e)}')
 
 
-@bot.command(name='skip', help='Skip the song.')
+@bot.command(name='skip', help='Skip the song')
 async def skip(ctx):
     if ctx.voice_client.is_playing():
         ctx.voice_client.stop()
@@ -139,6 +139,13 @@ async def skip(ctx):
 async def stop(ctx):
     await ctx.send("Steve is off.")
     await ctx.voice_client.disconnect()
+
+
+@bot.command(name='queue', help='Check the queue')
+async def stop(ctx):
+    await ctx.send('Your queue:')
+    for song in queue:
+        await ctx.send(f'{song.title}')
 
 
 bot.run('your_token')
