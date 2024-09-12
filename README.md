@@ -12,6 +12,7 @@ A bot that allows you to play youtube videos on your discord server.
 * !say - Make the bot say something.
 * !skip - Skip the song.
 * !stop - Disconnect the bot.
+* !queue - Check the queue.
 
 ## Getting Started
 
